@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <title>Angular Material - Starter App</title>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+        <!-- css -->
+        <link rel="stylesheet" href="./../js/lib/angular-material/angular-material.css"/>
+        <link rel="stylesheet" href="./../js/angularHideLoadInit.css"/>
+
+        <!-- angular js libs -->
+        <script type="text/javascript" src="./../js/lib/angular/angular.js"></script>
+        <script type="text/javascript" src="./../js/lib/angular-animate/angular-animate.js"></script>
+        <script type="text/javascript" src="./../js/lib/angular-route/angular-route.js"></script>
+        <script type="text/javascript" src="./../js/lib/angular-aria/angular-aria.js"></script>
+        <script type="text/javascript" src="./../js/lib/angular-material/angular-material.js"></script>
+        <script type="text/javascript" src="./../js/lib/angular-messages/angular-messages.js"></script>
+        <script type="text/javascript" src="./../js/lib/angular-sanitize/angular-sanitize.js"></script>
+        <script type="text/javascript" src="./../js/lib/angular-ui-router/release/angular-ui-router.js"></script>
+        <script type="text/javascript" src="./../js/manuallib/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="./../js/lib/angular-socket-io/socket.js"></script>
+        <script type="text/javascript" src="./../js/lib/ngmap/build/scripts/ng-map.js"></script>
+        
+        <script type="text/javascript" src="./../js/lib/angulargrid/angulargrid.js"></script>
+        <!--<script type="text/javascript" src="./../js/staticLib/angular-loadscript/angular-loadscript.js"></script>-->
+
+
+        <!-- js smilan services -->
+        <script type="text/javascript" src="./service/AnnouncesService.js"></script>
+        <script type="text/javascript" src="./service/UsersService.js"></script>
+        <script type="text/javascript" src="./service/GoogleAPIService.js"></script>
+        <script type="text/javascript" src="./service/SocketService.js"></script>
+
+        <!-- smilan templates -->
+        <script type="text/javascript" src="./templates/map/map.js"></script>
+        <script type="text/javascript" src="./templates/admin/user/user.js"></script>
+        <script type="text/javascript" src="./templates/chat/chat.js"></script>
+        
+        <script type="text/javascript" src="./templates/announce/announce.js"></script>
+        <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/assets-cache.js'></script>
+        <link rel="stylesheet" href="./templates/announce/style.css"/>
+        <link rel="stylesheet" href="./templates/announce/normalize.css"/>
+
+        <!-- js smilan app -->
+        <link rel="stylesheet" href="./app.css"/>
+        <script type="text/javascript" src="./app.js"></script>        
+        
+        
+        <!-- debug angular load -->
+        <script type="text/javascript">
+        (function() {
+            var a = document.createElement("script");
+            a.src = "./../js/lib/ng-stats/dist/ng-stats.js";
+            a.onload=function(){window.showAngularStats({position: 'topleft'})};
+            document.head.appendChild(a)})();
+        </script>
+
+    </head>
+
+    <body ng-app="SmilanApp" ng-cloak ng-strict-di="true">
+    <md-toolbar layout="row">
+        <md-icon md-svg-icon="svg-1" class="avatar"></md-icon>
+        <h1 flex>Smilan</h1>
+        <div>
+        <md-button class="md-raised md-warn" ui-sref="map" >Map</md-button>
+        <md-button class="md-raised md-warn" ui-sref="admin-user" >Admin-User</md-button>
+        <md-button class="md-raised md-warn" ui-sref="announce" >Announce</md-button>
+        <md-button class="md-raised md-warn" ui-sref="chat" >Chat</md-button>
+        </div>
+    </md-toolbar>
+    <md-content>
+        <div ui-view > This text will be replaced by the template (ui-router)</div>
+    </md-content>
+</body>
+</html>

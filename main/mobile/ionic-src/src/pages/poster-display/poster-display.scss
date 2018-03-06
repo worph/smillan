@@ -1,0 +1,17 @@
+page-poster-display {
+  .center-img-frame{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+  }
+
+  .center-img-img{
+    display:block;
+    margin:auto;
+    padding:auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

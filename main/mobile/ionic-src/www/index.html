@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <script data-ionic="inject">
+    (function(w){var i=w.Ionic=w.Ionic||{};i.version='3.3.0';i.angular='4.1.2';i.staticDir='build/';})(window);
+  </script>
+  <meta charset="UTF-8">
+  <title>Ionic App</title>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+
+  <script type="text/javascript" src="assets/src/properties/Properties.js"></script>
+  <script>//<![CDATA[
+  var basedir = GLOBAL_PROPERTIES["app.dir.base"];
+  if (basedir != undefined) {
+    document.write('<base href="' + basedir + '" />');
+  }
+  //]]></script>
+
+
+  <!-- cordova.js required for cordova apps -->
+  <script src="cordova.js"></script>
+
+  <!--<script>//<![CDATA[
+      if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('service-worker.js')
+            .then(function(){console.log('service worker installed');})
+            .catch(function(err){console.error('Error', err);});
+      }
+  //]]>
+  </script>-->
+
+  <link href="build/main.css" rel="stylesheet">
+
+  <!-- externals libs -->
+  <script type="text/javascript" src="assets/src/lib/angular/angular.min.js"></script>
+  <script type="text/javascript" src="assets/src/lib/angular-cookies/angular-cookies.min.js"></script>
+  <script type="text/javascript" src="assets/src/lib/ngCordova/dist/ng-cordova.min.js"></script>
+  <!--http://ngcordova.com/docs/install/-->>
+  <script type="text/javascript" src="assets/src/lib/strophejs/strophe.min.js"></script>
+  <script type="text/javascript" src="assets/src/lib/strophe-plugin/roster/strophe.roster.js"></script>
+  <script type="text/javascript" src="assets/src/lib/strophe-plugin/rsm/strophe.rsm.js"></script>
+  <script type="text/javascript" src="assets/src/lib/strophe-plugin/mam/strophe.mam.v0.3.js"></script>
+  <script type="text/javascript" src="assets/src/lib/strophe-plugin/muc/strophe.muc.js"></script>
+  <script type="text/javascript" src="assets/src/lib/moment/moment.js"></script>
+  <script type="text/javascript" src="assets/src/lib/imageloaded/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" src="assets/src/lib/desandro/masonry.pkgd.min.js"></script>
+
+  <!-- Special Google Libraries-->
+  <script>//<![CDATA[
+  var apiKey = GLOBAL_PROPERTIES["api.google.map.key"];
+  document.write('<script src="' + "https://maps.googleapis.com/maps/api/js?key=" + apiKey + '" async defer><\/script>');
+  //]]></script>
+
+
+  <!-- app js service -->
+  <script type="text/javascript" src="assets/src/services/PropertiesService.js"></script>
+  <script type="text/javascript" src="assets/src/services/GoogleAPIService.js"></script>
+  <script type="text/javascript" src="assets/src/services/LocationService.js"></script>
+  <script type="text/javascript" src="assets/src/services/SmilanHostService.js"></script>
+  <script type="text/javascript" src="assets/src/services/BackGroundWorker.js"></script>
+  <script type="text/javascript" src="assets/src/services/UploadService.js"></script>
+
+</head>
+<body>
+
+<!-- Ionic's root component and where the app will load -->
+<ion-app></ion-app>
+
+<!-- The polyfills js is generated during the build process -->
+<script src="build/polyfills.js"></script>
+
+<!-- The bundle js is generated during the build process -->
+<script src="build/main.js"></script>
+</body>
+</html>

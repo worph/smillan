@@ -1,0 +1,33 @@
+<!-- Generated template for the ChatComponent component -->
+<div>
+  <ul class="mainContainer">
+    <div *ngFor="let message of msgs">
+      <!-- message from others -->
+      <li *ngIf="!message.owned" class="chat-line">
+        <img *ngIf="profilesData[message.username]" (click)="userPopup(profilesData[message.username], $event)"
+             class="profile-picture left" src="{{profilesData[message.username].avatar.url}}"/>
+        <div class="message">
+          <b *ngIf="profilesData[message.username]">{{profilesData[message.username].profileName}}</b><br/>
+          <div class="message-date-container container">
+            <span class="message-flex" [innerHTML]="message.msg"></span>
+            <span class="date-flex">{{message.formatedTime}}</span>
+          </div>
+        </div>
+      </li>
+
+      <!-- message from me -->
+      <li *ngIf="message.owned" class="chat-line line-right">
+        <!--<img *ngIf="profilesData[message.username]" alt="{{profilesData[message.username].avatar.url}}"
+             src="{{profilesData[message.username].avatar.url}}"/>-->
+        <div class="message owner">
+          <div class="message-date-container">
+            <span class="message-flex" [innerHTML]="message.msg"></span>
+            <span class="date-flex">{{message.formatedTime}}</span>
+          </div>
+        </div>
+      </li>
+
+    </div>
+  </ul>
+  <p>{{typingStr}}</p>
+</div>

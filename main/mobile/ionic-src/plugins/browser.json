@@ -1,0 +1,52 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.smillan.mobile"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.smillan.mobile"
+        },
+        "cordova-plugin-crop": {
+            "PACKAGE_NAME": "com.smillan.mobile"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.smillan.mobile"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.smillan.mobile"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.smillan.mobile"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.smillan.mobile"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.smillan.mobile"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.smillan.mobile"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.smillan.mobile"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.smillan.mobile"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "com.smillan.mobile"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.smillan.mobile"
+        }
+    }
+}

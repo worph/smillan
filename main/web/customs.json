@@ -1,0 +1,96 @@
+{
+    "elements": {
+        "md-divider": {},
+        "md-toolbar": {
+            "attributes": {
+                "layout": {},
+                "class": {}
+            }
+        },
+        "md-list": {},
+        "md-card-header": {},
+        "md-content": {
+            "attributes": {
+                "layout-fill": {}
+            }
+        },
+        "md-progress-circular": {
+            "attributes": {
+                "md-mode": {},
+                "md-diameter": {},
+                "class": {}
+            }
+        },
+        "md-card": {
+            "attributes": {
+                "ng-repeat": {},
+                "ng-if": {},
+                "md-theme": {}
+            }
+        },
+        "md-progress-linear": {
+            "attributes": {
+                "md-mode": {}
+            }
+        },
+        "md-card-title-text": {},
+        "md-subheader": {},
+        "md-card-avatar": {},
+        "md-card-header-text": {},
+        "md-card-title": {},
+        "md-icon": {
+            "attributes": {
+                "md-svg-icon": {},
+                "ng-src": {},
+                "class": {}
+            }
+        },
+        "md-button": {
+            "attributes": {
+                "ng-click": {},
+                "class": {},
+                "ui-sref": {},
+                "ng-disabled": {}
+            }
+        },
+        "md-input-container": {
+            "attributes": {
+                "class": {}
+            }
+        },
+        "ng-map": {
+            "attributes": {
+                "center": {},
+                "zoom": {}
+            }
+        },
+        "md-card-content": {},
+        "md-grid-list": {
+            "attributes": {
+                "md-cols-xs": {},
+                "md-cols-sm": {},
+                "md-cols-md": {},
+                "md-gutter-gt-sm": {},
+                "md-cols-gt-md": {},
+                "md-row-height-gt-md": {},
+                "md-gutter": {},
+                "md-row-height": {}
+            }
+        }
+    },
+    "attributes": {
+        "layout": {
+            "context": "div"
+        },
+        "ag-infinite-scroll": {
+            "context": "div"
+        },
+        "flex": {
+            "context": "div"
+        },
+        "ui-view": {},
+        "map-lazy-load": {
+            "context": "div"
+        }
+    }
+}

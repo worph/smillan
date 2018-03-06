@@ -1,0 +1,80 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-title>{{!user?'Connecting...':user.anonymous===true?'Anonymous User Account':user.login}}</ion-title>
+    <ion-buttons right *ngIf="!(user==null?true:user.anonymous)">
+      <button ion-button icon-only (click)="goToSettings(event)">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding no-scroll>
+  <div *ngIf="connected">
+  <!-- Segment in content -->
+  <ion-segment [(ngModel)]="display" color="primary" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="profile">
+      profile
+    </ion-segment-button>
+    <ion-segment-button value="announce">
+      announce
+    </ion-segment-button>
+  </ion-segment>
+  <div class="container" style="height: 100%;width: 100%">
+    <div *ngIf="display=='profile'" class="profile">
+      <div *ngIf="user==null?false:user.anonymous" class="annonymous">
+
+        <ion-card style="padding: 10px">
+          <b>You are signed in as an anonymous user.</b><br/><b> Sign In or Sign Up to customise your account.</b><br/>
+          <button ion-button (click)="signIn()">&nbsp;Sign In</button>
+          <button ion-button (click)="signUp()">&nbsp;Sign Up</button>
+        </ion-card>
+      </div>
+      <div class="profile_card" *ngIf="user!=null">
+        <ion-card>
+
+          <ion-card-header>
+            <p text-center style="font-size: 2em;">{{user.profiles[0].profileName}}
+              <span *ngIf="user==null?false:!user.anonymous">
+                <button ion-button icon-end small color="light" (click)="changeProfileName($event)">
+                  <ion-icon name="create"></ion-icon>
+                </button>
+              </span>
+            </p>
+            <img *ngIf="!editImage" class="profile-image" src="{{user.profiles[0].avatar.url}}" (click)="changeAvatar($event)"/>
+            <div *ngIf="editImage">
+              <image-picker (imageReceived)="imageReceived($event)" source="camera"></image-picker>
+            </div>
+          </ion-card-header>
+
+          <ion-card-content *ngIf="false">
+            Description:<br/>
+            <ion-textarea placeholder="Enter your description" *ngIf="user.profiles[0]" rows="7"
+                          [(ngModel)]="user.profiles[0].description"></ion-textarea>
+          </ion-card-content>
+
+        </ion-card>
+      </div>
+    </div>
+    <div style="height: 100%;width: 100%" *ngIf="display=='announce'" class="announce">
+      <!--<ion-scroll style="height: 100%;width: 100%" scrollX="false" scrollY="true">-->
+      <announce-grid></announce-grid>
+      <!--</ion-scroll>-->
+    </div>
+  </div>
+  </div>
+
+  <div *ngIf="!connected">
+    <ion-spinner></ion-spinner>
+  </div>
+</ion-content>

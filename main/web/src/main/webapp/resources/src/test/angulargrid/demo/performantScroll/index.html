@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular Grid With Infinite Scroll</title>
+        <!--<link rel="stylesheet" href="css/normalize.css">-->
+        <!--<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.4/angular-material.css'>-->
+        <link rel="stylesheet" href="./../../../../../js/lib/angular-material/angular-material.css"/>
+        <link rel="stylesheet" href="./../../../../../js/staticLib/angulargrid/angularGridRequired.css"/>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div ng-controller="MainCtrl as ctrl" ng-app="app">
+            <md-content>
+                <div>
+                    <div
+                        class="cards-wrap"
+                        angular-grid="ctrl.shots"
+                        ag-grid-width="300"
+                        ag-performant-scroll="true"
+                        ag-gutter-size="12"
+                        ag-id="shots"
+                        ag-infinite-scroll="ctrl.loadMoreShots()"
+                        >
+                        <div class="card" ng-repeat="shot in ctrl.shots track by $index">
+                            <div class="img" style="background-image: url({{::shot.images.normal}});"></div>
+                            <div class="inside">
+                                <h3>{{::shot.title}}</h3>
+                                <div class="description" ng-bind-html="::shot.description | unsafe"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="loading-more-indicator" ng-show="ctrl.loadingMore">
+                        <md-progress-circular md-mode="indeterminate" md-diameter="64" class="progress-swatch"></md-progress-circular>
+                    </div>
+                </div>
+            </md-content>
+        </div>
+        
+        <script type="text/javascript" src="./../../../../../js/lib/angular/angular.js"></script>
+        <script type="text/javascript" src="./../../../../../js/lib/angular-animate/angular-animate.js"></script>
+        <script type="text/javascript" src="./../../../../../js/lib/angular-route/angular-route.js"></script>
+        <script type="text/javascript" src="./../../../../../js/lib/angular-aria/angular-aria.js"></script>
+        <script type="text/javascript" src="./../../../../../js/lib/angular-messages/angular-messages.js"></script>
+        <script type="text/javascript" src="./../../../../../js/lib/angular-material/angular-material.js"></script>
+        <script type="text/javascript" src="./../../../../../js/staticLib/angulargrid/angulargrid.js"></script>
+        <script src="index.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,209 @@
+{
+    "elements": {
+        "ion-nav-title": {},
+        "md-divider": {},
+        "ion-refresher": {
+            "attributes": {
+                "pulling-text": {},
+                "on-refresh": {}
+            }
+        },
+        "md-list": {},
+        "md-card-header": {},
+        "ion-slide-box": {
+            "attributes": {
+                "on-slide-changed": {},
+                "ng-if": {}
+            }
+        },
+        "ion-nav-bar": {
+            "attributes": {
+                "class": {}
+            }
+        },
+        "md-content": {
+            "attributes": {
+                "layout-fill": {}
+            }
+        },
+        "div": {
+            "attributes": {
+                "map-lazy-load-params": {},
+                "performantScroll": {},
+                "ng-bind-html": {},
+                "id": {},
+                "ag-grid-width": {}
+            }
+        },
+        "md-card": {
+            "attributes": {
+                "ng-repeat": {},
+                "md-theme": {}
+            }
+        },
+        "md-progress-linear": {
+            "attributes": {
+                "md-mode": {}
+            }
+        },
+        "ion-nav-view": {
+            "attributes": {
+                "name": {}
+            }
+        },
+        "ion-list": {},
+        "md-card-title-text": {},
+        "md-card-header-text": {},
+        "md-card-title": {},
+        "ion-nav-buttons": {
+            "attributes": {
+                "side": {}
+            }
+        },
+        "ion-scroll": {
+            "attributes": {
+                "ng-if": {},
+                "direction": {}
+            }
+        },
+        "ion-modal-view": {},
+        "md-button": {
+            "attributes": {
+                "class": {},
+                "ui-sref": {}
+            }
+        },
+        "md-card-content": {},
+        "ion-view": {
+            "attributes": {
+                "view-title": {},
+                "ng-controller": {},
+                "title": {},
+                "class": {}
+            }
+        },
+        "ion-header-bar": {
+            "attributes": {
+                "class": {}
+            }
+        },
+        "md-toolbar": {
+            "attributes": {
+                "layout": {},
+                "class": {}
+            }
+        },
+        "ion-footer-bar": {
+            "attributes": {
+                "class": {}
+            }
+        },
+        "ion-tab": {
+            "attributes": {
+                "icon": {},
+                "href": {},
+                "title": {},
+                "ui-sref": {}
+            }
+        },
+        "ion-content": {
+            "attributes": {
+                "overflow-scroll": {},
+                "scroll": {},
+                "class": {},
+                "delegate-handle": {}
+            }
+        },
+        "ion-nav-back-button": {
+            "attributes": {
+                "class": {}
+            }
+        },
+        "md-progress-circular": {
+            "attributes": {
+                "md-mode": {},
+                "md-diameter": {},
+                "class": {}
+            }
+        },
+        "md-subheader": {},
+        "md-card-avatar": {},
+        "marker": {
+            "attributes": {
+                "position": {},
+                "title": {}
+            }
+        },
+        "ion-tabs": {
+            "attributes": {
+                "class": {}
+            }
+        },
+        "ion-item": {
+            "attributes": {
+                "ng-if": {}
+            }
+        },
+        "md-icon": {
+            "attributes": {
+                "md-svg-icon": {},
+                "ng-src": {},
+                "class": {}
+            }
+        },
+        "md-input-container": {
+            "attributes": {
+                "class": {}
+            }
+        },
+        "ng-map": {
+            "attributes": {
+                "center": {},
+                "zoom": {},
+                "id": {}
+            }
+        },
+        "md-grid-list": {
+            "attributes": {
+                "md-cols-xs": {},
+                "md-cols-sm": {},
+                "md-cols-md": {},
+                "md-gutter-gt-sm": {},
+                "md-cols-gt-md": {},
+                "md-row-height-gt-md": {},
+                "md-gutter": {},
+                "md-row-height": {}
+            }
+        }
+    },
+    "attributes": {
+        "lastRepeatEvent": {},
+        "keyboard-attach": {},
+        "ag-infinite-scroll": {
+            "context": "div"
+        },
+        "ng-click": {},
+        "angular-grid": {
+            "context": "div"
+        },
+        "ng-controller": {},
+        "ui-view": {},
+        "ng-repeat": {},
+        "ng-if": {},
+        "map-lazy-load": {
+            "context": "div"
+        },
+        "layout": {
+            "context": "div"
+        },
+        "flex": {
+            "context": "div"
+        },
+        "on-finish-render": {},
+        "style": {},
+        "nav-transition": {
+            "context": "a"
+        },
+        "class": {}
+    }
+}

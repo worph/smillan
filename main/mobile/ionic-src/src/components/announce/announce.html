@@ -1,0 +1,46 @@
+<!-- Generated template for the AnnounceComponent component -->
+<div class="announce absolute-header-container">
+  <ion-fab *ngIf="announce.removeRight && this.onRemoveClick.observers.length!==0" top right>
+    <button ion-button icon-only mini color="danger" (click)="removeItem($event,announce)">
+      <ion-icon name="close-circle"></ion-icon>
+    </button>
+    <button ion-fab style="visibility: hidden"></button>
+  </ion-fab>
+  <div class="dynamic-grid-tile" (click)="popupAnnounce(announce, $event)">
+    <!-- LONG TYPE ANNOUNCE -->
+    <div *ngIf="announce.displayType === 'media_display'" class="announce announce-long announce-border">
+      <img class="center-img" *ngIf="announce.media.length === 1" alt="{{announce.media[0].url}}"
+           src="{{announce.media[0].url}}" style="width:100%"/>
+      <p *ngIf="announce.text !== '' && announce.text !== null" class="announce-text">{{announce.text}}</p>
+      <div class="announce-header" (click)="userPopup(announce.profile, $event)">
+        <img alt="{{announce.profile.avatar.url}}" src="{{announce.profile.avatar.url}}"/>
+        <h2>{{announce.profile.profileName}}</h2>
+      </div>
+      <div *ngIf="announce.text !== '' && announce.text !== null" class="announce-text-fade"></div>
+
+      <div class="AnnounceMessageDisplayDateInfo">
+        <div class="left"></div>
+        <div class="right">
+          <span><b>{{prettyDate(announce.created)}}</b></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SMALL TYPE ANNOUNCE -->
+    <div *ngIf="announce.displayType === 'message_display'" class="AnnounceMessageDisplay"
+         [ngStyle]="{'background-color':announce.backgroundColor}">
+      <div class="AnnounceMessageDisplayBubble">
+        <p class="AnnounceMessageDisplayBubbleText" style="white-space: pre-wrap;" [innerHTML]="announce.text"></p>
+        <div class="AnnounceMessageDisplayBubbleAvatarInfo">
+          <div class="left"></div>
+          <div *ngIf="announce.profile" class="right" (click)="userPopup(announce.profile, $event)">
+                            <span>{{announce.profile.profileName}}<br/>
+                            <b>{{prettyDate(announce.created)}}</b></span>
+            <img class="avatar" alt="{{announce.profile.avatar.url}}" [src]="announce.profile.avatar.url"/>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

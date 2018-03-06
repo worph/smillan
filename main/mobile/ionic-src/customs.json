@@ -1,0 +1,12 @@
+{
+    "elements": {
+        "ion-app": {},
+        "ion-nav": {},
+        "ion-tabs": {},
+        "ion-header": {},
+        "ion-tab": {},
+        "ion-content": {},
+        "announce-grid-scroll": {}
+    },
+    "attributes": {}
+}

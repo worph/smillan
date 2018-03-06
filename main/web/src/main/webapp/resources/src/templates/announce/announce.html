@@ -1,0 +1,79 @@
+<div>
+    <div
+        class="cards-wrap"
+        angular-grid="ctrl.shots"
+        ag-grid-width="300"
+        ag-performant-scroll="true"
+        ag-gutter-size="12"
+        ag-id="shots"
+        ag-infinite-scroll="ctrl.loadMoreShots()"
+        >
+        <!--<div class="card" ng-repeat="shot in ctrl.shots track by $index">
+            <div class="img" style="background-image: url({{::shot.imagePath}});"></div>
+            <div class="inside">
+                <h3>{{::shot.title}}</h3>
+                <div class="description" ng-bind-html="::shot.text | unsafe"></div>
+            </div>
+        </div>-->
+        <md-card ng-repeat="announce in ctrl.shots track by $index">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{announce.title}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <img ng-src="{{announce.imagePath}}" class="md-card-image">
+
+            <md-card-content>
+                <p>
+                    {{announce.text}}
+                </p>
+            </md-card-content>   
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button>Chat</md-button>
+                <md-button>Comment</md-button>
+            </md-card-actions>
+            <md-card-header>            
+                <md-card-avatar>
+                    <md-icon class="md-user-avatar" ng-src="{{announce.user.avatarPath}}"></md-icon>
+                </md-card-avatar>
+                <md-card-header-text>
+                    <span class="md-title">{{announce.user.username}}</span>
+                </md-card-header-text>
+            </md-card-header>     
+        </md-card>
+    </div>
+    <div class="loading-more-indicator" ng-show="ctrl.loadingMore" layout="row" layout-sm="column" layout-align="space-around">
+        <md-progress-circular md-mode="indeterminate" md-diameter="128" ng-show="ctrl.loadingMore" class="progress-swatch"></md-progress-circular>
+    </div>
+    <div style="height:100px;"></div><!--workaround to blink effect -->
+</div>
+
+<!--
+<div class='md-padding' layout="row" layout-wrap>
+    <md-card ng-repeat="announce in ctrl.announces" style="width: 300px;">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{announce.title}}</span>
+            </md-card-title-text>
+        </md-card-title>
+        <img ng-src="{{announce.imagePath}}" class="md-card-image">
+
+        <md-card-content>
+            <p>
+                {{announce.text}}
+            </p>
+        </md-card-content>   
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button>Chat</md-button>
+            <md-button>Comment</md-button>
+        </md-card-actions>
+        <md-card-header>            
+            <md-card-avatar>
+                <md-icon class="md-user-avatar" ng-src="{{announce.user.avatarPath}}"></md-icon>
+            </md-card-avatar>
+            <md-card-header-text>
+                <span class="md-title">{{announce.user.name}}</span>
+            </md-card-header-text>
+        </md-card-header>     
+    </md-card>
+</div>-->

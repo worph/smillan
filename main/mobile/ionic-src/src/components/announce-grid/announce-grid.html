@@ -1,0 +1,28 @@
+<div style="width:100%;height: 100%" no-border no-margin>
+
+  <!--<ion-list style="width:100%;height: 100%" [virtualScroll]="items" no-border no-margin style="display: flex;">
+
+    <div *virtualItem="let item" style="width:100%;height: 100%" flex-grow>
+        <announce [announce]="item"></announce>
+    </div>
+
+  </ion-list>-->
+
+  <!--<div>
+  <masonry [options]="{ transitionDuration: '0.6s', percentPosition: true }" [useImagesLoaded]="true">
+    <masonry-brick class="brick responsive-width" *ngFor="let item of items">
+      <announce *ngIf="item.ready" [announce]="item" (announceClick)="popupAnnounce($event)" (announceRemoveClick)="onRemoveAnnounce($event)"></announce>
+    </masonry-brick>
+  </masonry>
+  </div>-->
+
+  <div *ngFor="let item of items">
+    <announce *ngIf="item.ready" [announce]="item" (announceClick)="popupAnnounce($event)" (announceRemoveClick)="onRemoveAnnounce($event)"></announce>
+  </div>
+
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)" enable="true">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</div>

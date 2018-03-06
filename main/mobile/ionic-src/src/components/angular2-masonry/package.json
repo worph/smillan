@@ -1,0 +1,101 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "angular2-masonry",
+        "scope": null,
+        "escapedName": "angular2-masonry",
+        "name": "angular2-masonry",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\Documents\\Project\\Smilan\\Smilan-src\\main\\mobileV2\\ionic-src"
+    ]
+  ],
+  "_from": "angular2-masonry@latest",
+  "_id": "angular2-masonry@0.4.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/angular2-masonry",
+  "_nodeVersion": "6.9.1",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/angular2-masonry-0.4.0.tgz_1484161550670_0.8840405396185815"
+  },
+  "_npmUser": {
+    "name": "jelgblad",
+    "email": "jonas.elgblad@gmail.com"
+  },
+  "_npmVersion": "3.10.8",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "angular2-masonry",
+    "scope": null,
+    "escapedName": "angular2-masonry",
+    "name": "angular2-masonry",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular2-masonry/-/angular2-masonry-0.4.0.tgz",
+  "_shasum": "5be7c87bdabc50ed384f01c585f50f5170cdff10",
+  "_shrinkwrap": null,
+  "_spec": "angular2-masonry",
+  "_where": "D:\\Documents\\Project\\Smilan\\Smilan-src\\main\\mobileV2\\ionic-src",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/jelgblad/angular2-masonry/issues"
+  },
+  "dependencies": {
+    "masonry-layout": "^4.1.1"
+  },
+  "description": "Angular2 component for https://github.com/desandro/masonry",
+  "devDependencies": {
+    "@angular/core": "^2.1.0",
+    "@types/core-js": "^0.9.34",
+    "rxjs": "5.0.0-beta.12",
+    "typescript": "^2.0.3",
+    "zone.js": "^0.6.12"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "5be7c87bdabc50ed384f01c585f50f5170cdff10",
+    "tarball": "https://registry.npmjs.org/angular2-masonry/-/angular2-masonry-0.4.0.tgz"
+  },
+  "gitHead": "567dcb7ad68378eb23222161324cb4cbfe641c98",
+  "homepage": "https://github.com/jelgblad/angular2-masonry#readme",
+  "keywords": [
+    "angular2",
+    "component",
+    "desandro",
+    "masonry"
+  ],
+  "license": "ISC",
+  "main": "angular2-masonry.js",
+  "maintainers": [
+    {
+      "name": "jelgblad",
+      "email": "jonas.elgblad@gmail.com"
+    }
+  ],
+  "name": "angular2-masonry",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jelgblad/angular2-masonry.git"
+  },
+  "scripts": {
+    "dev": "tsc -w",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w"
+  },
+  "typings": "./index.d.ts",
+  "version": "0.4.0"
+}

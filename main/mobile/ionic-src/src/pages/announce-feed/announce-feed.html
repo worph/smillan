@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+
+    <ion-chip class="select-chip" *ngFor="let chip of selected">
+      <ion-icon name="bookmark" color="primary"></ion-icon>
+      <ion-label>{{category.prety(chip)}}</ion-label>
+    </ion-chip>
+    <ion-title *ngIf="selected.length==0">Newsfeed</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="goToCategory($event)">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <!--<ion-buttons right>
+      <!--<button ion-button icon-only (click)="goToAddAnnounce(event)">
+        <ion-icon name="create"></ion-icon>
+      </button> --><!--
+      <button ion-button icon-only (click)="goToCategory(event)">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>-->
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="page-home" no-border no-margin>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <announce-grid></announce-grid>
+
+  <ion-fab bottom right>
+    <button ion-fab (click)="goToAddAnnounce($event)">
+      <ion-icon name="create"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

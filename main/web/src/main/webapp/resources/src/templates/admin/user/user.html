@@ -1,0 +1,83 @@
+
+<div layout="column" class="userClass">
+
+    <md-card>
+        <form name="userForm">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">User Registration Form </span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <input type="hidden" ng-model="ctrl.user.id" />
+                <md-input-container class="md-block">
+                    <label>Name</label>
+                    <input name="uname" ng-model="ctrl.user.username" placeholder="Enter your name" required ng-minlength="3"/>
+                    <div ng-messages="userForm.uname.$error" multiple role="alert">
+                        <div ng-message="required">
+                            This field is required
+                        </div>
+                        <div ng-message="minlength">
+                            Minimum length required is 3.
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Address</label>
+                    <input type="text" ng-model="ctrl.user.address" placeholder="Enter your Address. [This field is validation free]"/>
+                </md-input-container>                
+                
+                <md-input-container class="md-block">
+                    <label>Email</label>
+                    <input type="email" ng-model="ctrl.user.email" name="email" class="email form-control input-sm" placeholder="Enter your Email" required ng-pattern="/^.+@.+\..+$/"/>                
+                    <div ng-messages="userForm.email.$error" multiple role="alert">
+                        <div ng-message="required">
+                            This field is required
+                        </div>
+                        <div ng-message="pattern">
+                            The format is invalid
+                        </div>
+                    </div>
+                </md-input-container>
+                
+                <md-input-container class="md-block">
+                    <label>AvatarPath</label>
+                    <input type="text" ng-model="ctrl.user.avatarPath"/>
+                </md-input-container>
+            </md-card-content>
+
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-raised md-primary" ng-click="ctrl.submit();" ng-disabled="(userForm.$invalid || userForm.$pristine)">{{!ctrl.user.id ? 'Add' : 'Update'}}</md-button>
+                <md-button class="md-raised md-warn" ng-click="ctrl.reset()" ng-disabled="userForm.$pristine">Reset Form</md-button>
+
+            </md-card-actions>
+        </form>
+    </md-card>
+    <md-divider></md-divider>
+    <md-card>
+        <!-- Default panel contents -->
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">List of Users </span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <md-list layout="column">
+                <md-divider ></md-divider>
+                <md-list-item flex ng-repeat="u in ctrl.users" ng-click="ctrl.edit(u.id)" >
+                    <div flex class="md-list-item-text" layout="row">
+                        <h3 flex="10">{{ u.id}}</h3>
+                        <h4 flex>{{ u.username}}</h4>
+                        <p flex>{{ u.address}}</p>
+                        <p flex>{{ u.email}}</p>
+                        <p flex>{{ u.avatarPath}}</p>
+                    </div>
+                    <md-button class="md-raised md-primary" ng-click="ctrl.edit(u.id)">Edit</md-button>
+                    <md-button class="md-raised md-warn" ng-click="ctrl.remove(u.id)">Remove</md-button>
+                    <md-divider ></md-divider>
+                </md-list-item>
+            </md-list>
+        </md-card-content>
+    </md-card>
+</div>

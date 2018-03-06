@@ -1,0 +1,69 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+////////////////////////////////////////////////////////////////////////
+//Globals for responsive grid
+////////////////////////////////////////////////////////////////////////
+/*
+         768          992                1200
+'     '     '     '     '     '     '     '     '
+<---------^------------^------------------^--------->
+   xs         sm              md             lg
+ (phone)   (tablet)        (laptop)       (desktop)
+ */
+
+@media (max-width : 768px) {
+  //phone
+  .responsive-width{
+    width:100%
+  }
+}
+@media (min-width: 768px) and (max-width : 992px) {
+  //tablet
+  .responsive-width{
+    width:50%
+  }
+}
+@media (min-width: 992px) and (max-width : 1200px) {
+  //laptop
+  .responsive-width{
+    width:33.33333333%
+  }
+}
+@media (min-width: 1200px) {
+  //desktop
+  .responsive-width{
+    width:20%
+  }
+}
+
+/////////////////////////////////////////////////////////////////////
+//globals for chips
+/////////////////////////////////////////////////////////////////////
+.select-chip{
+  margin: 2px;
+}
+
+/////////////////////////////////////////////////////////////////////
+//globals for avatars
+/////////////////////////////////////////////////////////////////////
+.avatar {
+  height: 42px;
+  width: 42px;
+  border-radius: 100%;
+  padding: 5px;
+}

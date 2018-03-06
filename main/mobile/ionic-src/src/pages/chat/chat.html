@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <div class="flex-avatar" *ngIf="otherProfile">
+      <img class="avatar" alt="{{otherProfile.avatar.url}}" [src]="otherProfile.avatar.url"/>
+      <ion-title>{{otherProfile.profileName}}</ion-title>
+    </div>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <chat [chatid]="id" (scollBottomNedded)="scrollBottom(event)"></chat>
+</ion-content>
+<ion-footer no-border>
+  <chat-send [chatid]="id"></chat-send>
+</ion-footer>

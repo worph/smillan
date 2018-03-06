@@ -1,0 +1,55 @@
+image-picker {
+  .container{
+    position: relative;
+  }
+
+  .add-announce-spinner svg {
+    align-content: center;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    width: 100%;
+    height: 20vw;
+  }
+
+  .box
+  {
+    cursor: pointer;
+    font-size: 1.25rem; /* 20 */
+    background-color: #c8dadf;
+    position: relative;
+    padding: 100px 20px;
+  }
+  .box.has-advanced-upload
+  {
+    outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
+
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+  }
+  .box.has-advanced-upload .boxIcon
+  {
+    width: 100%;
+    height: 80px;
+    fill: #92b0b3;
+    display: block;
+    margin-bottom: 40px;
+  }
+  .hiddenInput
+  {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  .BoxFileUploadText
+  {
+    text-align: center;
+    width:100%;
+  }
+  .BoxFileUploadText:hover{
+    color: #39bfd3;
+  }
+}

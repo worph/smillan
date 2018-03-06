@@ -1,0 +1,99 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>POST!</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <masonry [options]="{ transitionDuration: '0.8s' }" [useImagesLoaded]="true">
+    <masonry-brick class="brick responsive-width" *ngFor="let item of items">
+      <ion-card *ngIf="item.type===ITEM_TEXT">
+        <!--<ion-card-header>
+        </ion-card-header>-->
+        <ion-card-content>
+          <ion-item>
+            <ion-textarea placeholder="What's up?" [(ngModel)]="item.value" rows="15"></ion-textarea>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+
+      <ion-card *ngIf="item.type===ITEM_CATEGORY">
+        <ion-card-header>
+          <ion-item>
+            Category
+            <button ion-button item-end (click)="item.onAdd()">Add</button>
+          </ion-item>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-chip class="select-chip" *ngFor="let chip of item.selected">
+            <ion-icon name="bookmark" color="primary"></ion-icon>
+            <ion-label>{{chip}}</ion-label>
+            <button ion-button clear color="danger" (click)="item.onDelete(chip)">
+              <ion-icon name="close-circle"></ion-icon>
+            </button>
+          </ion-chip>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card *ngIf="item.type===ITEM_CATEGORY2">
+        <ion-card-header>
+          <ion-item>
+            Category
+            <button ion-button item-end (click)="item.onAdd()">Add</button>
+          </ion-item>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-chip class="select-chip" *ngFor="let chip of item.selected">
+            <ion-icon name="bookmark" color="primary"></ion-icon>
+            <ion-label>{{category.prety(chip)}}</ion-label>
+            <button ion-button clear color="danger" (click)="item.onDelete(chip)">
+              <ion-icon name="close-circle"></ion-icon>
+            </button>
+          </ion-chip>
+        </ion-card-content>
+      </ion-card>
+
+
+      <ion-card *ngIf="item.type===ITEM_IMAGE">
+        <!--<ion-card-header>
+        </ion-card-header>-->
+        <ion-card-content no-padding>
+          <image-picker (imageReceived)="item.callback($event)" [source]="item.source"></image-picker>
+        </ion-card-content>
+      </ion-card>
+    </masonry-brick>
+
+  </masonry>
+
+  <ion-fab bottom right *ngIf="menuItems.length>1 && !imagePresent">
+    <button ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <ion-fab-list side="top">
+      <button ion-fab *ngFor="let item of menuItems" (click)="item.callback(item.parent,fab)">
+        <ion-icon name="{{item.icon}}"></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
+  <ion-fab bottom right *ngIf="menuItems.length==1 && !imagePresent">
+    <button ion-fab (click)="menuItems[0].callback(menuItems[0].parent,fab)">
+      <ion-icon name="{{menuItems[0].icon}}"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button *ngIf="!postAnnounceLoading" ion-button (click)="postAnnounce(event)">
+        <ion-icon name="send"></ion-icon>
+        &nbsp;Post announce
+      </button>
+      <ion-spinner *ngIf="postAnnounceLoading"></ion-spinner>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,10 @@
+<ion-toolbar>
+  <!--<ion-input (change)="updateTyping()" type="text" placeholder="Send a message..." (keypress)="keypressed($event.keyCode)" [(ngModel)]="msg" required
+             minlength="1" maxlength="1500"></ion-input>-->
+  <input class="messageDraft" type="text" (change)="updateTyping()" placeholder="Send a message..." (keypress)="keypressed($event.keyCode)" [(ngModel)]="msg" />
+  <ion-buttons right>
+    <button [disabled]="!msg || msg === ''" ion-button icon-only (click)="sendMessage()">
+      <ion-icon name="send"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-toolbar>

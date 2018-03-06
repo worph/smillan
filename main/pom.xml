@@ -1,0 +1,167 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.smilan</groupId>
+    <artifactId>smilan-global</artifactId>
+    <name>smilan-global</name>
+
+    <version>1.0-SNAPSHOT</version>
+
+    <description>Smilan</description>
+    <packaging>pom</packaging>
+
+    <dependencies>
+        
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        
+        <!-- PojoBuilder -->
+        <dependency>
+            <groupId>net.karneim</groupId>
+            <artifactId>pojobuilder</artifactId>
+            <version>3.4.2</version>
+            <!-- 'provided' scope because this is only needed during compilation -->
+        </dependency>
+        <!-- Test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <!--<scope>test</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.10.19</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>4.2.5.RELEASE</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--<dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.10</version>
+        </dependency>-->
+        
+                <!-- LOGGER -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${dependance.logger.slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${dependance.logger.slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+            <version>${dependance.logger.slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>${dependance.logger.slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${dependance.logger.logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${dependance.logger.logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.logback-extensions</groupId>
+            <artifactId>logback-ext-spring</artifactId>
+            <version>${dependance.logger.logback.ext.version}</version>
+        </dependency>
+    </dependencies>
+
+    <modules>
+        <module>process</module>
+        <module>web</module>
+    </modules>
+
+    <properties>        
+        <!-- Dependance Version -->
+        <!-- JEE -->
+        <dependance.javax.javaee-api>7.0</dependance.javax.javaee-api>
+        <dependance.javax.transaction-api.version>1.2</dependance.javax.transaction-api.version>
+        <dependance.javax.servlet-api.version>3.1.0</dependance.javax.servlet-api.version>
+        <dependance.javax.jsp-api.version>2.3.1</dependance.javax.jsp-api.version>
+        <dependance.javax.jstl-api.version>1.2.1</dependance.javax.jstl-api.version>
+        <dependance.javax.inject.version>1</dependance.javax.inject.version>
+        <!-- JCE -->
+        <!-- provider -->
+        <dependance.bouncycastle.version>1.54</dependance.bouncycastle.version>
+        <!-- JPA -->
+        <!-- provider -->
+        <dependance.hibernate.version>5.1.0.Final</dependance.hibernate.version>
+
+        <!-- SPRING -->
+        <dependance.springframework.version>4.3.1.RELEASE</dependance.springframework.version>
+        <dependance.springframework.security.version>4.1.0.RELEASE</dependance.springframework.security.version>
+
+        <!-- DATABASE -->
+        <dependance.hikaricp.version>2.4.6</dependance.hikaricp.version>
+        <dependance.h2database.version>1.4.192</dependance.h2database.version>
+        <dependance.querydsl.version>4.1.3</dependance.querydsl.version>
+
+        <!-- LOGGER -->
+        <dependance.logger.slf4j.version>1.7.21</dependance.logger.slf4j.version>
+        <dependance.logger.logback.version>1.1.7</dependance.logger.logback.version>
+        <dependance.logger.logback.ext.version>0.1.4</dependance.logger.logback.ext.version>
+
+        <!-- TEST -->
+        <dependance.test.junit.version>4.12</dependance.test.junit.version>
+        <dependance.test.mockito.version>1.10.19</dependance.test.mockito.version>
+
+        <!-- AUTRE -->
+        <dependance.google.guava.version>19.0</dependance.google.guava.version>
+        <dependance.jackson2.version>2.8.0</dependance.jackson2.version>
+        <dependance.commons.configuration.version>1.10</dependance.commons.configuration.version> <!-- //TODO upgrade to version 2.0 -->
+        <dependance.pojobuilder.version>3.4.0</dependance.pojobuilder.version>
+        <dependance.docx4j.version>3.3.0</dependance.docx4j.version>
+        
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+    
+    <developers>
+        <developer>
+            <name>Pierre-Henri FRICOT</name>
+        </developer>
+    </developers>
+    
+</project>

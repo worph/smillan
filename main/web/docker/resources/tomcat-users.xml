@@ -1,0 +1,2 @@
+<role rolename="manager-gui"/>
+<user username="tomcat" password="tomcatlolilol" roles="manager-gui,manager-status"/>

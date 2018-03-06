@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Chat List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <!-- user chat -->
+  <ion-list>
+    <ion-item class="chatHandle" *ngFor="let chatHandle of chatHandleList" (click)="gotoChat(chatHandle)">
+      <ion-avatar item-start *ngIf="profilesData[chatHandle.getRoomId()]">
+        <img src="{{profilesData[chatHandle.getRoomId()].avatar.url}}">
+      </ion-avatar>
+      <h2 *ngIf="profilesData[chatHandle.getRoomId()]">{{profilesData[chatHandle.getRoomId()].profileName}}</h2>
+      <p *ngIf="chatHandle.getMsgs().get()[chatHandle.getMsgs().get().length-1]">{{chatHandle.getMsgs().get()[chatHandle.getMsgs().get().length-1].text}}</p>
+      <ion-badge item-end *ngIf="chatHandle.getMessageUnseenNumber()!==0">{{chatHandle.getMessageUnseenNumber()}}</ion-badge>
+    </ion-item>
+  </ion-list>
+
+  <!-- announce chats -->
+  <ion-list>
+    <ion-item class="chatHandle" *ngFor="let chatHandle of announceHandleList" (click)="gotoAnnounce(announcesData[chatHandle.getRoomId()])">
+      <ion-thumbnail *ngIf="announcesData[chatHandle.getRoomId()]" item-start>
+        <img *ngIf="announcesData[chatHandle.getRoomId()].media.length==1" alt="image" src="{{announcesData[chatHandle.getRoomId()].media[0].url}}">
+        <img *ngIf="announcesData[chatHandle.getRoomId()].media.length!=1" alt="image" src="assets/image/default_announce.png">
+      </ion-thumbnail>
+      <h2 *ngIf="announcesData[chatHandle.getRoomId()]">{{announcesData[chatHandle.getRoomId()].text}}</h2>
+      <p *ngIf="chatHandle.getMsgs().get()[chatHandle.getMsgs().get().length-1]">{{chatHandle.getMsgs().get()[chatHandle.getMsgs().get().length-1].text}}</p>
+      <ion-badge item-end *ngIf="chatHandle.getMessageUnseenNumber()!==0">{{chatHandle.getMessageUnseenNumber()}}</ion-badge>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
